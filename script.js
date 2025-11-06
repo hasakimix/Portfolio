@@ -263,3 +263,39 @@ document.addEventListener('DOMContentLoaded', () => {
         homeSection.classList.add('active');
     }
 });
+
+// Video Modal Functions
+function openVideoModal(videoSrc, videoTitle) {
+    const modal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+    const titleElement = document.getElementById('videoTitle');
+    
+    titleElement.textContent = videoTitle;
+    videoPlayer.src = videoSrc;
+    modal.classList.add('active');
+    videoPlayer.play();
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+    
+    videoPlayer.pause();
+    videoPlayer.src = '';
+    modal.classList.remove('active');
+}
+
+// Close video modal on background click
+document.getElementById('videoModal').addEventListener('click', (e) => {
+    if (e.target.id === 'videoModal') {
+        closeVideoModal();
+    }
+});
+
+// Add Escape key support for video modal
+document.addEventListener('keydown', (e) => {
+    const videoModal = document.getElementById('videoModal');
+    if (videoModal.classList.contains('active') && e.key === 'Escape') {
+        closeVideoModal();
+    }
+});
