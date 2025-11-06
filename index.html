@@ -44,7 +44,8 @@
                     <li><a href="#" data-section="home" class="nav-link active">Home</a></li>
                     <li><a href="#" data-section="about" class="nav-link">About</a></li>
                     <li><a href="#" data-section="skills" class="nav-link">Skills</a></li>
-                    <li><a href="#" data-section="projects" class="nav-link">Projects</a></li>
+                    <li><a href="#" data-section="projects" class="nav-link">Dev Projects</a></li>
+                    <li><a href="#" data-section="videos" class="nav-link">Video Projects</a></li>
                     <li><a href="#" data-section="experience" class="nav-link">Experience</a></li>
                     <li><a href="#" data-section="contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -174,7 +175,7 @@
             <!-- Projects Section -->
             <section id="projects" class="content-section">
                 <div class="section-header">
-                    <h2 class="section-title">Featured Projects</h2>
+                    <h2 class="section-title">Programming Projects</h2>
                     <p class="section-subtitle">Click on any project to view screenshots</p>
                 </div>
                 <div class="projects-grid">
@@ -197,14 +198,6 @@
                                 <span class="tech-tag">CodeIgniter</span>
                                 <span class="tech-tag">MySQL</span>
                             </div>
-                            <div class="project-links">
-                                <!-- <a href="https://github.com/yourusername/project1" target="_blank" onclick="event.stopPropagation();">
-                                    <span>🔗</span> GitHub
-                                </a>
-                                <a href="https://yourproject1.com" target="_blank" onclick="event.stopPropagation();">
-                                    <span>🌐</span> Live Demo
-                                </a> -->
-                            </div>
                         </div>
                     </div>
 
@@ -225,13 +218,71 @@
                                 <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">Firebase</span>
                             </div>
-                            <div class="project-links">
-                                <!-- <a href="https://github.com/yourusername/project2" target="_blank" onclick="event.stopPropagation();">
-                                    <span>🔗</span> GitHub
-                                </a>
-                                <a href="https://yourproject2.com" target="_blank" onclick="event.stopPropagation();">
-                                    <span>🌐</span> Live Demo
-                                </a> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Projects Section -->
+            <section id="videos" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Video Projects</h2>
+                    <p class="section-subtitle">Click on any project to watch video.</p>
+                </div>
+                <div class="video-grid">
+                    <div class="video-card" onclick="openVideoModal('vid/Software Galore.mp4', 'Project Title 1')">
+                        <div class="video-thumbnail">
+                            <img src="tn/SoftGal.jpg" alt="Video Project 1">
+                            <div class="play-overlay">
+                                <span class="play-icon">▶</span>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3>Software Galore</h3>
+                            <p class="video-description">
+                                Software Galore is a promotional video showcasing a variety of software applications.
+                            </p>
+                            <div class="video-tech">
+                                <span class="tech-tag">Premiere Pro</span>
+                                <span class="tech-tag">Photoshop</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideoModal('vid/video2.mp4', 'Project Title 2')">
+                        <div class="video-thumbnail">
+                            <img src="tn/cs.jpg" alt="Video Project 2">
+                            <div class="play-overlay">
+                                <!-- <span class="play-icon">▶</span> -->
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3></h3>
+                            <p class="video-description">
+                                
+                            </p>
+                            <div class="video-tech">
+                                <!-- <span class="tech-tag">Premiere Pro</span>
+                                <span class="tech-tag">Audition</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideoModal('vid/video3.mp4', 'Project Title 3')">
+                        <div class="video-thumbnail">
+                            <img src="tn/cs.jpg" alt="Video Project 3">
+                            <div class="play-overlay">
+                                <!-- <span class="play-icon">▶</span> -->
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3></h3>
+                            <p class="video-description">
+
+                            </p>
+                            <div class="video-tech">
+                                <!-- <span class="tech-tag">Premiere Pro</span>
+                                <span class="tech-tag">Color Grading</span> -->
                             </div>
                         </div>
                     </div>
@@ -330,6 +381,18 @@
             </div>
         </div>
     </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <button class="close-modal" onclick="closeVideoModal()">&times;</button>
+        <div class="video-modal-container">
+            <h2 id="videoTitle" style="color: var(--accent-blue); text-align: center; margin-bottom: 1.5rem;"></h2>
+            <video id="videoPlayer" controls style="max-width: 100%; max-height: 70vh; border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
